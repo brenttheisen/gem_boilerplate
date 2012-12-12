@@ -1,4 +1,6 @@
-guard 'rspec', :version => 2, :cli => '-d'  do
+guard 'rspec', :cli => '-d'  do
+  notification :growl
+
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/#{m[1]}_spec.rb" }
   watch('spec/spec_helper.rb')  { "spec" }
